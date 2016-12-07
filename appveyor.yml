@@ -36,3 +36,6 @@ build_script:
 test:
   assemblies:
   - ReactWindows\ReactNative.Net46.Tests\bin\x64\**\*.Tests.dll
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
